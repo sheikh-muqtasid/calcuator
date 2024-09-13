@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="calculatorApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="CalculatorController">
+    <h1>Calculator</h1>
+    <div class="container">
+        <div class="calculator">
+            <input type="text" class="input" ng-model="display" readonly>
+            <div class="buttons">
+                <button ng-click="clear()" style="background-color: rgb(200, 60, 60);">C</button>
+                <button ng-click="append('1')">1</button>
+                <button ng-click="append('2')">2</button>
+                <button ng-click="operation('+')" style="background-color: rgb(233, 143, 143); color: black;"><b>+</b></button>
+                <button ng-click="append('3')">3</button>
+                <button ng-click="append('4')">4</button>
+                <button ng-click="append('5')">5</button>
+                <button ng-click="operation('-')" style="background-color: rgb(233, 143, 143); color: black;"><b>-</b></button>
+                <button ng-click="append('6')">6</button>
+                <button ng-click="append('7')">7</button>
+                <button ng-click="append('8')">8</button>
+                <button ng-click="operation('*')" style="background-color: rgb(233, 143, 143); color: black;"><b>*</b></button>
+                <button ng-click="append('9')">9</button>
+                <button ng-click="append('0')">0</button>
+                <button ng-click="append('.')" style="background-color: rgb(233, 143, 143); color: black;"><b>.</b></button>
+                <button ng-click="operation('/')" style="background-color: rgb(233, 143, 143); color: black;">  <b>/</b></button>
+                <button ng-click="calculate()" style="background-color: rgb(200, 60, 60); width: 93%;">=</button>
+            </div>
+        </div>
+        <div class="history">
+            <h2>History</h2>
+            <ul>
+                <li ng-repeat="entry in history">{{ entry }}</li>
+            </ul>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>
